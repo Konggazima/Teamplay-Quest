@@ -1,7 +1,11 @@
 body {
-    background-color:  #e5dead;
+    background-color:  #e5deda;
     margin: 0;
     padding: 0;
+}
+
+img {
+    margin: 20px;
 }
 
 #login {
@@ -35,6 +39,7 @@ body {
 
 .quest-body img {
     float: left;
+    margin: 30px;
 }
 
 .quest-detail,
