@@ -3,4 +3,4 @@ Initialize Flask app
 
 """
 
-import create, detail, index, list, manage, user
+import create, detail, index, list, manage, user, before
