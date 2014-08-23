@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from flask import render_template, request, redirect, url_for, flash, g, session
-from sqlalchemy import desc
+from sqlalchemy import desc,func
 from apps import app, db
-from apps.kstime import kstime
+from utils import get_user_id_from_database, get_user_id
 
 from apps.models import *
 
@@ -15,10 +15,11 @@ from datetime import datetime
 # @app.route('/group/<int:group_id>', methods=['GET', 'POST'])
 # def group(group_id = 0):
 def group():
+    user_id = get_user_id()
 
+    groups = db.session.query(Group, User.name).join(Groupmember).filter(Groupmember.user_id == user_id).join(User).filter(Group.owner_id == Group.owner_id)
 
-    return render_template('group.html')
-
+    return render_template('group.html', groups=groups)
 
 
 @app.route('/group/create', methods=['GET', 'POST'])
