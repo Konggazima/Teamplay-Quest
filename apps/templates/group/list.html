@@ -1,14 +1,15 @@
 {% extends "layout.html" %}
 
 {% block contents %}
+<div class="grouplist-bg"></div>
+<div id="list">
     {% if groups  %}
         {% for group, owner in groups  %}
-            {{ group.id }}
-            {{ group.name }}
-            {{ owner }}
+    <div class="group-item">
+        <img src="/static/images/grouplist_group.png"/>
+        <h2> {{ group.name }} </h2>
+    </div>
         {% endfor %}
-
     {% endif %}
-
+</div>
 {% endblock %}
-
