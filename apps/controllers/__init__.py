@@ -3,7 +3,4 @@ Initialize Flask app
 
 """
 
-import controller, controller2
-
-
-
+import create, detail, index, list, manage, user
