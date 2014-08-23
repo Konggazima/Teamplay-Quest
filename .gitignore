@@ -4,4 +4,4 @@
 *.bak
 *.mo
 .DS_Store
-.idea
+.idea/
