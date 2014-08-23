@@ -2,11 +2,12 @@
 from flask.ext.wtf import Form
 from wtforms import (
     StringField,
-    TextAreaField
+    TextAreaField,
+    HiddenField
 )
 from wtforms import validators
 from wtforms.validators import NumberRange
-from wtforms.fields.html5 import IntegerField,IntegerRangeField, DecimalField
+from wtforms.fields.html5 import DecimalField
 
 class GroupForm(Form):
     name = StringField(
@@ -33,6 +34,8 @@ class QuestForm(Form):
         [validators.data_required(u'내용을 입력해주세요.')],
         description={'placeholder': u'내용을 입력해주세요.'}
     )
+
+    group_id = HiddenField()
 
     expired_date = DecimalField(
         u'기한',

@@ -1,7 +1,7 @@
 import os
 from apps import app
 from flask import request, redirect, url_for, session, g
-from utils import get_user_id_from_database
+from utils import get_user_id_from_database, get_user_id
 
 # @app.url_value_preprocessor
 # def pull_lang_code(endpoint, values):
@@ -20,8 +20,9 @@ def before_request():
         user_id = get_user_id_from_database(data)
         session.update(data)
 
-    if 'user_id' in session:
-        pass
+    if get_user_id():
+        if request.endpoint in ('index', 'login'):
+            return redirect(url_for('list'))
     else :
         if request.endpoint in ('index', 'login'):
             pass

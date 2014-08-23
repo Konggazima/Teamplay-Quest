@@ -11,8 +11,10 @@ from utils import get_user_id
 
 @app.route('/group', methods=['GET', 'POST'])
 @app.route('/group/', methods=['GET', 'POST'])
-@app.route('/group/<int:group_id>', methods=['GET', 'POST'])
-def group(group_id = 0):
+# @app.route('/group/<int:group_id>', methods=['GET', 'POST'])
+# def group(group_id = 0):
+def group():
+
 
     return render_template('group.html')
 

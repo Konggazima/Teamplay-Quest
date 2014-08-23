@@ -12,20 +12,22 @@ from utils import get_user_id
 
 @app.route('/quest/create', methods=['GET', 'POST'])
 def create_quest():
-    form = QuestForm()
+    form = QuestForm(group_id=4)
     if request.method == 'GET':
         return render_template('quest/create.html', form=form)
     elif request.method == 'POST':
         if form.validate_on_submit():
-            # quest = Quest(
-            #     name = form.name.data,
-            #     description = form.description.data,
-            #     owner_id = get_user_id()
-            #     date_created = kstime(0)
-            # )
-            #
-            # db.session.add(group)
-            # db.session.commit()
+            quest = Quest(
+                title = form.title.data,
+                category = form.category.data,
+                description = form.description.data,
+                group_id = form.group_id.data,
+                date_created = kstime(0),
+                date_expired = kstime(int(form.expired_date.data))
+            )
+
+            db.session.add(quest)
+            db.session.commit()
 
             return redirect(url_for('list'))
         else:
