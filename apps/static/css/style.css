@@ -45,8 +45,10 @@ nav, .navbar, .navbar-default {
 }
 
 #add-friends {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    text-align: center;
+    display: block;
 }
 
 #add-friends-popup {
