@@ -8,6 +8,10 @@ img {
     margin: 20px;
 }
 
+nav {
+    background-color: #b32230;
+}
+
 #login {
     width: 500px;
     height: auto;
