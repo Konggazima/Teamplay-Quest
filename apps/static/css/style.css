@@ -23,6 +23,10 @@ nav, .navbar, .navbar-default {
     text-align: center;
 }
 
+#create {
+    background-color: #fff;
+}
+
 #list,
 #detail {
     background-color: #63452d;
