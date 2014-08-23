@@ -14,6 +14,57 @@ body {
     text-align: center;
 }
 
+#list {
+    margin: 0 auto;
+    min-width: 480px;
+    height: auto;
+    text-align: center;
+}
+
+.quest-box {
+    padding-bottom: 15px;
+}
+
+.quest-body,
+.quest-foot {
+    width: 100%;
+    padding: 0px 10px;
+}
+
+.quest-body img {
+    float: left;
+    margin: 0 5px;
+    background-color: #eee;
+}
+
+.quest-body .title {
+    border-radius: 5px 5px 0px 0px;
+    margin: 0px;
+    font-weight: bold;
+    background-color: #aaa;
+}
+
+.quest-body .desc {
+    margin: 0px;
+    text-align: left;
+    padding-left: 5px;
+    background-color: green;
+}
+
+.quest-body {
+    font-size: 24px;
+}
+
+.btn-flat {
+    width:100%;
+    border-radius: 0px;
+}
+
+.btn-bath {
+    width:100%;
+    border-radius: 0px 0px 5px 5px;
+}
+
 .color-1{
     color: #3efe8d;
 }
