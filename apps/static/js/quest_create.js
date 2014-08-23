@@ -17,9 +17,8 @@ $(document).ready(function () {
                 $(dom).css({"display": "inline", "margin": "20px"});
                 $(dom).addClass("picked");
                 uid = $(this).next().getAttribute("data-id");
-                console.log(uid);
-                hidden = "<input type=\"hidden\" value\" " + uid + " \" />";
-                $("form").append(hidden);
+                hidden = "<input type=\"hidden\" value\"=" + uid + " \" />";
+                $("form").insert(hidden);
                 $("#add-friends").after( dom );
             }
         });
