@@ -1,6 +1,7 @@
 import os
 from apps import app
 from flask import request, redirect, url_for, session, g
+from utils import get_user_id
 
 # @app.url_value_preprocessor
 # def pull_lang_code(endpoint, values):
@@ -16,14 +17,16 @@ def before_request():
             'email' : 'someone@some.one',
             'img_url' : ''
         }
+        user_id = get_user_id(data)
         session.update(data)
-
     g.user_id = None
 
     if 'user_id' in session:
         g.user_id = session['user_id']
     else :
-        if request.endpoint != 'index' and request.endpoint != 'login':
+        if request.endpoint in ('index', 'login'):
+            pass
+        else:
             return redirect(url_for('index'))
 
     # if 'user_id' in session:
