@@ -17,7 +17,7 @@ $(document).ready(function () {
 		closeAddFriendsPopup();
 	});
 
-	#(".btn-circle").click( function() {
+	$(".btn-circle").click( function() {
 		checked = this.getAtrribute('data-checked');
 
 		if( checked ) {
