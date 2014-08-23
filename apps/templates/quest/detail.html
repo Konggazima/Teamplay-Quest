@@ -2,8 +2,7 @@
 
 {% block contents %}
 <div id="detail">
-    {% if quests %}
-        {% for quest in quests %}
+    {% if quest %}
             {#{ quest.id }#}
             {#{ quest.category }#}
             {#{ quest.success }#}
@@ -43,7 +42,6 @@
            <span class="circle-icon circle circle-down-left" ></span>
         </div>
     </div>
-        {% endfor %}
     {% endif %}
     <div class="quest-box">
         <div class="quest-score">
@@ -59,4 +57,5 @@
         </div>
         <button class="btn btn-bath">체크인해주세요</button>
     </div>
+</div>
 {% endblock %}
