@@ -8,7 +8,7 @@ img {
     margin: 20px;
 }
 
-nav {
+nav, .navbar, .navbar-default {
     background-color: #b32230;
 }
 
@@ -49,6 +49,7 @@ nav {
 
 .quest-body .title img {
     margin: 5px;
+    margin-top: 30px;
 }
 
 .quest-detail,
@@ -96,6 +97,10 @@ nav {
 
 .quest-add-comment {
     padding-top: 10px;
+}
+
+.detail-arrow {
+    float: right;
 }
 
 .btn-flat {
