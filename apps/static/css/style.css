@@ -192,7 +192,7 @@ nav, .navbar, .navbar-default {
 .group-item {
     text-align: center;
     margin: 0 auto;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
 }
  
 .group-item img {
@@ -201,7 +201,7 @@ nav, .navbar, .navbar-default {
 }
 
 .group-item h2 {
-    margin-top: -100px;
+    margin-top: -150px;
 }
 
 .logo-brand {
