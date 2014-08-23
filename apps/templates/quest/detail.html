@@ -1,21 +1,62 @@
 {% extends "layout.html" %}
 
 {% block contents %}
-{% if quest %}
-        {{ quest.id }}<br>
-        {{ quest.title }}<br>
-        {{ quest.category }}<br>
-        {{ quest.description }}<br>
-        {{ quest.group_id }}<br>
-        {{ quest.date_crated }}<br>
-        {{ quest.date_expired }}<br>
-        {{ quest.success }}<br><br><br>
-{% endif %}
-{% if quest %}
-    {% for user in users %}
-        {{ user.id }}<br>
-        {{ user.name }}<br>
-        {{ user.img_url }}<br>
-    {% endfor %}
-{%  endif %}
+<div id="detail">
+    {% if quests %}
+        {% for quest in quests %}
+            {#{ quest.id }#}
+            {#{ quest.category }#}
+            {#{ quest.success }#}
+    <div class="quest-box">
+        <div class="circle-outer circle-outer-up-right">
+           <span class="circle-icon circle circle-up-right" ></span>
+        </div>
+        <div class="circle-outer circle-outer-up-left">
+           <span class="circle-icon circle circle-up-left" ></span>
+        </div>
+        <div class="quest-body">
+            <img src="/static/images/list_place.png" width="100px" height="100px" />
+            <p class="title">
+                <img src="/static/images/list_title.png" height="40px" /><br /><br />
+                <hr />
+                {{ quest.title }}
+            </p>
+            <p class="desc"> {{ quest.description }}<br /> </p>
+
+        </div>
+        <div class="quest-foot">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button class="btn btn-gray" type="button">시간</button>
+                </span>
+            </div>
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button class="btn btn-gray" type="button">장소</button>
+                </span>
+            </div>
+        </div>
+        <div class="circle-outer circle-outer-down-right">
+           <span class="circle-icon circle circle-down-right"></span>
+        </div>
+        <div class="circle-outer circle-outer-down-left">
+           <span class="circle-icon circle circle-down-left" ></span>
+        </div>
+    </div>
+        {% endfor %}
+    {% endif %}
+    <div class="quest-box">
+        <div class="quest-score">
+    {% if quest %}
+        {% for user in users %}
+            <p>
+                <img src="{{ user.img_url }}" width="50px" height="50px"/><br />
+                {{ user.name }}
+            </p>
+        <br>
+        {% endfor %}
+    {%  endif %}
+        </div>
+        <button class="btn btn-bath">체크인해주세요</button>
+    </div>
 {% endblock %}
