@@ -8,10 +8,11 @@ $(document).ready(function () {
     });
 
     $("#add-friends-lockin").click( function() {
-        $("#friends input").each( function(k,v) {
-            if( v.checked ) {
-                dom = "<img src=\"\" width=\"50px\" height=\"50px\" />";
-                $("#add-friends").before(dom);
+        $(".btn-circle").each( function(k,v) {
+            if( v.checked ) {;
+                dom = $(this).next().clone();
+                $(dom).css({"display": "inline", "margin": "20px"});
+                $("#add-friends").before( dom );
             }
         });
         closeAddFriendsPopup();
@@ -19,7 +20,7 @@ $(document).ready(function () {
 
     $(".btn-circle").each( function() {
         $(this).click( function() {
-            checked = this.getAtrribute('data-checked');
+            checked = this.getAttribute('data-checked');
 
             if( checked ) {
                 $(this).removeClass("no");
