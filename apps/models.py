@@ -17,7 +17,6 @@ class User(db.Model):
 class Group(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
-    description = db.Column(db.Text())
     owner_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     owner = db.relationship('User', backref=db.backref('group', cascade='all, delete-orphan', lazy='dynamic'))
     date_created = db.Column(db.DateTime())

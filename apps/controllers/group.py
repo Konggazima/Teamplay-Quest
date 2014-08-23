@@ -26,7 +26,6 @@ def create_group():
         if form.validate_on_submit():
             group = Group(
                 name = form.name.data,
-                description = form.description.data,
                 owner_id = g.user_id,
                 date_created = kstime(0)
             )

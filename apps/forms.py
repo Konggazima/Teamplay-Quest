@@ -6,19 +6,13 @@ from wtforms import (
 )
 from wtforms import validators
 from wtforms.validators import NumberRange
-from wtforms.fields.html5 import IntegerField
+from wtforms.fields.html5 import IntegerField,IntegerRangeField, DecimalField
 
 class GroupForm(Form):
     name = StringField(
         u'그룹 이름',
         [validators.data_required(u'그룹 이름을 입력해주세요.')],
         description={'placeholder': u'그룹 이름을 입력해주세요.'}
-    )
-
-    description = StringField(
-        u'그룹 설명',
-        [validators.data_required(u'그룹 설명을 입력해주세요.')],
-        description={'placeholder': u'그룹 설명을 입력해주세요.'}
     )
 
 class QuestForm(Form):
@@ -40,10 +34,10 @@ class QuestForm(Form):
         description={'placeholder': u'내용을 입력해주세요.'}
     )
 
-    expired_date = IntegerField(
+    expired_date = DecimalField(
         u'기한',
         validators=[NumberRange(1, 120)],
-        description={'placeholder': u'1에서 120사이의 숫자를 입력해주세요.'}
+        description={'placeholder': u'1에서 120사이의 시간를 입력해주세요.'}
     )
 
 # class JoinForm(Form):
