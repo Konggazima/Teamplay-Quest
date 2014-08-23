@@ -33,3 +33,10 @@ def create_quest():
         else:
             return render_template('quest/create.html', form=form)
 
+@app.route('/quest/detail/<int:quest_id>', methods=['GET'])
+def detail_quest(quest_id):
+    quest = Quest.query.all(quest_id)
+
+    users = db.session.query(User).join(Groupmember).filter(Groupmember.group_id == quest.group_id).all()
+
+    return render_template('quest/detail.html', quest=quest, users=users)

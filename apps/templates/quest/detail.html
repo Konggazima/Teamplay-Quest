@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block contents %}
+{% if quest %}
+        {{ quest.id }}<br>
+        {{ quest.title }}<br>
+        {{ quest.category }}<br>
+        {{ quest.description }}<br>
+        {{ quest.group_id }}<br>
+        {{ quest.date_crated }}<br>
+        {{ quest.date_expired }}<br>
+        {{ quest.success }}<br><br><br>
+{% endif %}
+{% if quest %}
+    {% for user in users %}
+        {{ user.id }}<br>
+        {{ user.name }}<br>
+        {{ user.img_url }}<br>
+    {% endfor %}
+{%  endif %}
+{% endblock %}
