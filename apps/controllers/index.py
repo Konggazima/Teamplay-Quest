@@ -11,8 +11,8 @@ from apps.models import *
 
 @app.route('/', methods=['GET'])
 def index():
-    # if g.user_id != None:
-    #     return redirect(url_for('list'))
+    if g.user_id != None:
+        return redirect(url_for('list'))
     return render_template('index.html')
 
 
@@ -31,7 +31,7 @@ def login():
             email=email,
             fb_id=fb_id,
             img_url=img_url,
-            date_created=kstime(0)
+            date_created=kstime(1)
         )
 
         db.session.add(user)

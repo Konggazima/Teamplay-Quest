@@ -16,6 +16,14 @@
         </form>
     </div>
 
+    {% if users %}
+        {% for user in users%}
+            {{ user.name }} <br> {{ user.img_url }} <br>{{ user.id }}
+            <br>
+            <br>
+        {% endfor %}
+    {% endif %}
+
     <div id="whiteboard">&nbsp;
     </div>
 
