@@ -5,6 +5,7 @@ from wtforms import (
     TextAreaField
 )
 from wtforms import validators
+from wtforms.validators import NumberRange
 from wtforms.fields.html5 import IntegerField
 
 class GroupForm(Form):
@@ -20,29 +21,30 @@ class GroupForm(Form):
         description={'placeholder': u'그룹 설명을 입력해주세요.'}
     )
 
-# class QuestForm(Form):
-#     title = StringField(
-#         u'퀘스트 이름',
-#         [validators.data_required(u'퀘스트 이름을 입력해주세요.')],
-#         description={'placeholder': u'퀘스트 이름을 입력해주세요.'}
-#     )
-#
-#     category = StringField(
-#         u'카테고리',
-#         [validators.data_required(u'카테고리를 입력하주세요.')],
-#         description={'placeholder': u'카테고리를 입력해주세요.'}
-#     )
-#
-#     description = TextAreaField(
-#         u'내용',
-#         [validators.data_required(u'내용을 입력해주세요.')],
-#         description={'placeholder': u'내용을 입력해주세요.'}
-#     )
-#
-#     expired_date = IntegerField(
-#         [validators.NumberRange(1, 120)(u'1에서 120사이의 숫자를 입력해주세요.')],
-#          description={'placeholder': u'1에서 120사이의 숫자를 입력해주세요.'}
-#     )
+class QuestForm(Form):
+    title = StringField(
+        u'퀘스트 이름',
+        [validators.data_required(u'퀘스트 이름을 입력해주세요.')],
+        description={'placeholder': u'퀘스트 이름을 입력해주세요.'}
+    )
+
+    category = StringField(
+        u'카테고리',
+        [validators.data_required(u'카테고리를 입력하주세요.')],
+        description={'placeholder': u'카테고리를 입력해주세요.'}
+    )
+
+    description = TextAreaField(
+        u'내용',
+        [validators.data_required(u'내용을 입력해주세요.')],
+        description={'placeholder': u'내용을 입력해주세요.'}
+    )
+
+    expired_date = IntegerField(
+        u'기한',
+        validators=[NumberRange(1, 120)],
+        description={'placeholder': u'1에서 120사이의 숫자를 입력해주세요.'}
+    )
 
 # class JoinForm(Form):
 #     email = EmailField(

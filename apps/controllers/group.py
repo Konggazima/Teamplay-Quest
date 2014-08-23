@@ -9,8 +9,10 @@ from apps.models import *
 from apps.forms import GroupForm
 
 
-@app.route('/group/create', methods=['GET', 'POST'])
-def create_group():
+@app.route('/group', methods=['GET', 'POST'])
+@app.route('/group/', methods=['GET', 'POST'])
+@app.route('/group/<int:group_id>', methods=['GET', 'POST'])
+def group(group_id = 0):
     form = GroupForm()
     if request.method == 'GET':
         return render_template('group/create.html', form=form)
@@ -29,4 +31,5 @@ def create_group():
             return redirect(url_for('list'))
         else:
             return render_template('group/create.html', form=form)
+
 
