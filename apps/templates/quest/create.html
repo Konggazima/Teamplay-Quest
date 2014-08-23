@@ -9,6 +9,18 @@
             {% for field in form if field.widget.input_type != 'hidden' %}
                 {{ render_field(field, class="form-control", placeholder=field.description['placeholder']) }}
             {% endfor %}
+            <input type="text" id="date_expired" name="date_expired"/>
+            <script type="text/javascript">
+                $(function(){
+                    $('*[name=date_expired]').datetimepicker({
+    step:30,
+    format:'Y/m/d/H/i',
+    minDate:'-1970/01/1',
+    maxDate:'+1970/03/1',
+    inline:true
+});
+                });
+            </script>
 
             <button type="submit" class="btn btn-info">퀘스트 만들기</button>
         </form>

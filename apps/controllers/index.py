@@ -19,3 +19,10 @@ def index():
 def login():
     user_id = get_user_id_from_database(request.args)
     return jsonify(id=None)
+
+
+@app.route('/logout')
+def logout():
+    session.clear()
+
+    return redirect(url_for('index'))

@@ -7,14 +7,14 @@ from apps.kstime import kstime
 from apps.models import *
 
 from apps.forms import QuestForm
-from utils import get_user_id
+from utils import get_user_id, get_tz_offset
 from datetime import datetime, timedelta
 
 
-@app.route('/quest', methods=['GET'])
-@app.route('/quest/', methods=['GET'])
-def quest():
-    quests = Quest.query.all()
+# @app.route('/quest', methods=['GET'])
+@app.route('/quest/<int:group_id>', methods=['GET'])
+def quest(group_id):
+    quests = Quest.query.filter(Quest.group_id == group_id)
 
     return render_template('quest/list.html', quests=quests)
 
@@ -30,14 +30,14 @@ def create_quest():
     elif request.method == 'POST':
         if form.validate_on_submit():
             now = datetime.utcnow()
+            expired = datetime.datetime(*form.expired_date.split('/')) + timedelta(minutes = get_tz_offset())
             quest = Quest(
-                title=form.title.data,
-                category=form.category.data,
-                description=form.description.data,
-                group_id=form.group_id.data,
-                date_created=now,
-                date_expired=now + timedelta(0, int(form.expired_date.data))
-            )
+                title = form.title.data,
+                category = form.category.data,
+                description = form.description.data,
+                group_id = form.group_id.data,
+                date_created = now,
+                date_expired = expired)
 
             db.session.add(quest)
             db.session.commit()
