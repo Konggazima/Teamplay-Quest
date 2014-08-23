@@ -43,6 +43,7 @@ def get_tz_offset():
     try:
         offset = db.session.query(User.timezone_offset).filter(
             User.id == user_id).one()
+        offset = int(offset)
     except NoResultFound:
         offset = -540
     return offset
