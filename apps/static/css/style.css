@@ -172,7 +172,8 @@ nav, .navbar, .navbar-default {
 #create img {
     max-width: 400px;
     min-width: 50px;
-    margin: 20px;
+    margin: 20px auto;
+    display: block;
 }
 
 .creategroup-bg {
