@@ -172,7 +172,7 @@ nav, .navbar, .navbar-default {
     height: 100%;
     z-index: -3;
     background-repeat: repeat;
-    background-image: url("/static/images/grouplist-bg.png");
+    background-image: url("/static/images/grouplist_bg.png");
     background-size: 200px;
 }
 
@@ -265,6 +265,13 @@ nav, .navbar, .navbar-default {
 .circle-down-left {
     margin-top: -30px;
     margin-left: 10px;
+}
+
+.redirect-qc,
+.redirect-gc {
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 .ok {

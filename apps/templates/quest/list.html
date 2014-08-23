@@ -2,6 +2,10 @@
 
 {% block contents %}
 <div id="list">
+    <a href="/quest/create" class="redirect-qc">
+        새 퀘스트 만들기
+    </a>
+
     {% if quests %}
         {% for quest in quests %}
             {#{ quest.id }#}

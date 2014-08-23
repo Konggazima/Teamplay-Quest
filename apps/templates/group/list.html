@@ -3,6 +3,10 @@
 {% block contents %}
 <div class="grouplist-bg"></div>
 <div id="list">
+    <a href="/group/create" class="redirect-gc">
+        <img src="/static/images/grouplist_icon_new.png" width="30px" /> 새 그룹 만들기
+    </a>
+
     {% if groups  %}
         {% for group, owner in groups  %}
     <div class="group-item">
