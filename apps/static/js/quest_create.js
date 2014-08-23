@@ -16,6 +16,10 @@ $(document).ready(function () {
                 dom = $(this).next().clone();
                 $(dom).css({"display": "inline", "margin": "20px"});
                 $(dom).addClass("picked");
+                uid = $(this).next().getAttribute("data-id");
+                console.log(uid);
+                hidden = "<input type=\"hidden\" value\" " + uid + " \" />";
+                $("form").append(hidden);
                 $("#add-friends").after( dom );
             }
         });

@@ -14,7 +14,7 @@
         {% for user in users%}
             <div class="input-group input-lg">
                 <input type="button" class="btn btn-circle input-lg no" data-checked="false" />
-                <img src="{{ user.img_url }}" height="40px" class=""/> {{ user.name }}
+                <img src="{{ user.img_url }}" height="40px" class="" data-id="{{ user.id }}" /> {{ user.name }}
             </div>
         {% endfor %}
     {% endif %}
