@@ -43,7 +43,7 @@ def create_quest():
             db.session.add(quest)
             db.session.commit()
 
-            return redirect(url_for('list'))
+            return redirect(url_for('detail_quest', quest_id = quest.id))
         else:
             members = db.session.query(User).join(Groupmember).filter(Groupmember.group_id == 4)
 
