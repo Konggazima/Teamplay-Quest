@@ -1,16 +1,22 @@
 {% extends "layout.html" %}
 
 {% block contents %}
-    <div id="login">
-    <h1 class="color-2">Hello Teamplay Quest!</h1>
-
-    <h3 class="color-1">We need your Name.</h3>
-
-    <button type="submit" id="facebook-btn" class="btn btn-primary" style="margin-top: 15px;">Login with Facebook
-    </button>
+<div id="list">
+    <div class="quest-box">
+        <div class="quest-body">
+            <img src="" width="100px" height="100px" />
+            <p class="title"> Title </p>
+            <p class="desc"> Description
+            <br />  Chicken!Chicken! Chicken!
+            <br />  Chicken!Chicken! Chicken!
+            <br />  Chicken!Chicken! Chicken!
+            <br />  Chicken!Chicken! Chicken!
+            </p>
+        </div>
+        <div class="quest-foot">
+            <button class="btn btn-success btn-bath">수행완료</button>
+        </div>
+    </div>
 </div>
 
-<script src="{{ url_for('static', filename='js/login.js') }}"></script>
-
 {% endblock %}
-
