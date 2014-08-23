@@ -11,6 +11,7 @@ from utils import get_user_id
 
 
 @app.route('/quest/create', methods=['GET', 'POST'])
+@app.route('/quest/create/', methods=['GET', 'POST'])
 def create_quest():
     form = QuestForm(group_id=4)
     if request.method == 'GET':
@@ -35,7 +36,7 @@ def create_quest():
 
 @app.route('/quest/detail/<int:quest_id>', methods=['GET'])
 def detail_quest(quest_id):
-    quest = Quest.query.all(quest_id)
+    quest = Quest.query.get(quest_id)
 
     users = db.session.query(User).join(Groupmember).filter(Groupmember.group_id == quest.group_id).all()
 
