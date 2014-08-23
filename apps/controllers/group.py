@@ -19,7 +19,7 @@ def group():
 
     groups = db.session.query(Group, User.name).join(Groupmember).filter(Groupmember.user_id == user_id).join(User).filter(Group.owner_id == Group.owner_id)
 
-    return render_template('group.html', groups=groups)
+    return render_template('group/list.html', groups=groups)
 
 
 @app.route('/group/create', methods=['GET', 'POST'])

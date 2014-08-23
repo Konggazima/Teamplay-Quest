@@ -11,10 +11,10 @@ from utils import get_user_id
 from datetime import datetime, timedelta
 
 
-@app.route('/quest', methods=['GET'])
-@app.route('/quest/', methods=['GET'])
-def quest():
-    quests = Quest.query.all()
+# @app.route('/quest', methods=['GET'])
+@app.route('/quest/<int:group_id>', methods=['GET'])
+def quest(group_id):
+    quests = Quest.query.filter(Quest.group_id == group_id)
 
     return render_template('quest/list.html', quests=quests)
 
