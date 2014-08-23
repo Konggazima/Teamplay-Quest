@@ -8,10 +8,14 @@ $(document).ready(function () {
     });
 
     $("#add-friends-lockin").click( function() {
-        $(".btn-circle").each( function(k,v) {
-            if( v.checked ) {;
+        $(".picked").each( function() {
+            $(this).remove();
+        });
+        $(".btn-circle").each( function() {
+            if( this.getAttribute("data-checked") ) {
                 dom = $(this).next().clone();
                 $(dom).css({"display": "inline", "margin": "20px"});
+                $(dom).addClass("picked");
                 $("#add-friends").before( dom );
             }
         });
@@ -20,7 +24,7 @@ $(document).ready(function () {
 
     $(".btn-circle").each( function() {
         $(this).click( function() {
-            checked = this.getAttribute('data-checked');
+            checked = this.getAttribute("data-checked");
 
             if( checked ) {
                 $(this).removeClass("no");
@@ -30,7 +34,7 @@ $(document).ready(function () {
                 $(this).addClass("no");
             }
 
-            this.setAttribute('data-checked', !checked);
+            this.setAttribute("data-checked", !checked + "");
         });
     });
 });
