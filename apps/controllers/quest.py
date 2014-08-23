@@ -30,7 +30,7 @@ def create_quest():
     elif request.method == 'POST':
         if form.validate_on_submit():
             now = datetime.utcnow()
-            date_str = request.form['expired_date'].split('/')
+            date_str = request.form['date_expired'].split('/')
             expired = datetime(*date_str) + timedelta(minutes = get_tz_offset())
             quest = Quest(
                 title = form.title.data,
