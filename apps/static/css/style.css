@@ -45,6 +45,8 @@ nav, .navbar, .navbar-default {
 }
 
 #add-friends {
+    margin: 0;
+    padding: 0;
 }
 
 #add-friends-popup {
@@ -170,6 +172,7 @@ nav, .navbar, .navbar-default {
 #create img {
     max-width: 400px;
     min-width: 50px;
+    margin: 20px;
 }
 
 .creategroup-bg {
