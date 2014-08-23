@@ -2,6 +2,18 @@
 
 {% block contents %}
 <div id="list">
+    {% if quests %}
+        {% for quest in quests %}
+            {{ quest.id }}<br>
+            {{ quest.title }}<br>
+            {{ quest.category }}<br>
+            {{ quest.description }}<br>
+            {{ quest.group_id }}<br>
+            {{ quest.date_crated }}<br>
+            {{ quest.date_expired }}<br>
+            {{ quest.success }}<br><br><br>
+        {% endfor %}
+    {% endif %}
     <div class="quest-box">
         <div class="circle-outer circle-outer-up-right">
            <span class="circle-icon circle circle-up-right" ></span>

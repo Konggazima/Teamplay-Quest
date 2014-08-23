@@ -7,9 +7,13 @@ from apps.models import *
 
 @app.route('/list', methods=['GET'])
 @app.route('/list/', methods=['GET'])
-@app.route('/list/<mode>', methods=['GET'])
-@app.route('/list/<mode>/', methods=['GET'])
-@app.route('/list/<mode>/<int:page>', methods=['GET'])
-def list(mode = 'joined', page = 0):
-    assert(mode in ('joined', 'created'))
-    return render_template('list.html')
+# @app.route('/list/<mode>', methods=['GET'])
+# @app.route('/list/<mode>/', methods=['GET'])
+# @app.route('/list/<mode>/<int:page>', methods=['GET'])
+# def list(mode = 'joined', page = 0):
+def list():
+    # assert(mode in ('joined', 'created'))
+
+    quests = Quest.query.all()
+
+    return render_template('list.html', quests=quests)
