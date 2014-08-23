@@ -7,6 +7,7 @@ from apps.kstime import kstime
 from apps.models import *
 
 from apps.forms import QuestForm
+from utils import get_user_id
 
 
 @app.route('/quest/create', methods=['GET', 'POST'])
@@ -19,7 +20,7 @@ def create_quest():
             # quest = Quest(
             #     name = form.name.data,
             #     description = form.description.data,
-            #     owner_id = g.user_id,
+            #     owner_id = get_user_id()
             #     date_created = kstime(0)
             # )
             #

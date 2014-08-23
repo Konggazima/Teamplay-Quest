@@ -7,7 +7,7 @@ from sqlalchemy.orm.exc import NoResultFound
 
 from apps.models import *
 
-def get_user_id(data):
+def get_user_id_from_database(data):
     name = data['name']
     fb_id = data['fb_id']
     email = data['email']
@@ -30,4 +30,7 @@ def get_user_id(data):
     session.permanent = True
     session['user_id'] = user_id
     return user_id
+
+def get_user_id():
+    return session.get('user_id')
 
