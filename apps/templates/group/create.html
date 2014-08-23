@@ -13,7 +13,7 @@
     {% if users %}
         {% for user in users%}
             <div class="input-group input-lg">
-                <input type="button" class="btn btn-circle input-lg glyphicon glyphicon-remove-circle" data-checked="false" />
+                <input type="button" class="btn btn-circle input-lg ok" data-checked="false" />
                 <img src="{{ user.img_url }}" height="40px" class=""/> {{ user.name }}
             </div>
         {% endfor %}

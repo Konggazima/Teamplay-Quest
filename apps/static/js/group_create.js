@@ -21,11 +21,11 @@ $(document).ready(function () {
 		checked = this.getAtrribute('data-checked');
 
 		if( checked ) {
-			$(this).removeClass("glyphicon glyphicon-remove-circle");
-			$(this).addClass("glyphicon glyphicon-ok-circle");
+			$(this).removeClass("no");
+			$(this).addClass("ok");
 		} else {
-			$(this).removeClass("glyphicon glyphicon-ok-circle");
-			$(this).addClass("glyphicon glyphicon-remove-circle");
+			$(this).removeClass("ok");
+			$(this).addClass("no");
 		}
 
 		this.setAttribute('data-checked', !checked);

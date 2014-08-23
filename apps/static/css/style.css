@@ -262,6 +262,14 @@ nav, .navbar, .navbar-default {
     margin-left: 10px;
 }
 
+.ok {
+    background: blue;
+}
+
+.no {
+    background: red;
+}
+
 .color-1{
     color: #3efe8d;
 }
