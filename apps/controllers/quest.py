@@ -54,6 +54,10 @@ def create_quest():
 def detail_quest(quest_id):
     quest = Quest.query.get(quest_id)
 
+    user_id = get_user_id()[0]
+    group = Group.query.get(quest.group_id)
+    owner_id = group.owner_id
+
     users = db.session.query(User).join(Questmember).filter(Questmember.quest_id == quest.id)
 
-    return render_template('quest/detail.html', quest=quest, users=users)
+    return render_template('quest/detail.html', quest=quest, users=users, user_id=user_id, owner_id=owner_id)

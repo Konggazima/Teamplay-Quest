@@ -21,6 +21,7 @@
                 {{ quest.title }}
             </p>
             <p class="desc"> {{ quest.description }}<br /> </p>
+            <input type="hidden" value="{{ quest.id }}" name="quest_id"/>
 
         </div>
         <div class="quest-foot">
@@ -55,7 +56,12 @@
         {% endfor %}
     {%  endif %}
         </div>
+    {% if user_id == owner_id %}
         <button class="btn btn-bath">체크인해주세요</button>
+    {% endif %} 
+
     </div>
 </div>
+
+    <script src="{{ url_for('static', filename='js/quest_detail.js') }}"></script>
 {% endblock %}
