@@ -4,16 +4,9 @@
 <div id="list">
     {% if quests %}
         {% for quest in quests %}
-            {{ quest.id }}<br>
-            {{ quest.title }}<br>
-            {{ quest.category }}<br>
-            {{ quest.description }}<br>
-            {{ quest.group_id }}<br>
-            {{ quest.date_crated }}<br>
-            {{ quest.date_expired }}<br>
-            {{ quest.success }}<br><br><br>
-        {% endfor %}
-    {% endif %}
+            {#{ quest.id }#}
+            {#{ quest.category }#}
+            {#{ quest.success }#}
     <div class="quest-box">
         <div class="circle-outer circle-outer-up-right">
            <span class="circle-icon circle circle-up-right" ></span>
@@ -23,13 +16,8 @@
         </div>
         <div class="quest-body">
             <img src="/static/images/list_place.png" width="100px" height="100px" />
-            <p class="title"> Title </p>
-            <p class="desc"> Description
-            <br />  Chicken!Chicken! Chicken!
-            <br />  Chicken!Chicken! Chicken!
-            <br />  Chicken!Chicken! Chicken!
-            <br />  Chicken!Chicken! Chicken!
-            </p>
+            <p class="title"> {{ quest.title }}<br /> </p>
+            <p class="desc"> {{ quest.description }}<br /> </p>
         </div>
         <div class="quest-foot">
             <div class="input-group">
@@ -50,5 +38,7 @@
            <span class="circle-icon circle circle-down-left" ></span>
         </div>
     </div>
+        {% endfor %}
+    {% endif %}
 </div>
 {% endblock %}
