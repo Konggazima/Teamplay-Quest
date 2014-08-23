@@ -2,7 +2,9 @@ function fblogin() {
     var name;
     FB.api('/me', function (response) {
         name = response.name;
-        alert(name);
+        if (name != undefined) {
+            alert(name);
+        }
     });
 }
 
