@@ -51,11 +51,8 @@ class Questmember(db.Model):
 
 class Review(db.Model):
     quest_id = db.Column(db.Integer, db.ForeignKey('quest.id'), primary_key=True)
-    quest = db.relationship('Quest', backref=db.backref('review', cascade='all, delete-orphan', lazy='dynamic'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
-    user = db.relationship('User', backref=db.backref('review', cascade='all, delete-orphan', lazy='dynamic'))
     reviewer_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
-    reviewer = db.relationship('User', backref=db.backref('review', cascade='all, delete-orphan', lazy='dynamic'))
     point = db.Column(db.Integer)
     note = db.Column(db.String(255))
     date_created = db.Column(db.DateTime())
