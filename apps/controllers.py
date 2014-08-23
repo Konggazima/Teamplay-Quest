@@ -3,10 +3,7 @@ from flask import render_template, request, redirect, url_for, flash
 from sqlalchemy import desc
 from apps import app, db
 
-from apps.models import (
-    Article,
-    Comment
-)
+from apps.models import *
 
 @app.route('/', methods=['GET'])
 def index():
