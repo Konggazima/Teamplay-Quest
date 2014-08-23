@@ -12,5 +12,14 @@
 
             <button type="submit" class="btn btn-info">퀘스트 만들기</button>
         </form>
+
+        {% if members %}
+            {% for member in members  %}
+                {{ member.id }}<br>
+                {{ member.name }}<br>
+                {{ member.img_url }}<br><br>
+            {% endfor %}
+
+        {% endif %}
     </div>
 {% endblock %}

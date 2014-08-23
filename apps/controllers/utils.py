@@ -7,11 +7,14 @@ from sqlalchemy.orm.exc import NoResultFound
 
 from apps.models import *
 
+from datetime import datetime
+
 def get_user_id_from_database(data):
     name = data['name']
     fb_id = data['fb_id']
     email = data['email']
     img_url= data['img_url']
+    timezone_offset = data['timezone_offset']
     try:
         user_id = db.session.query(User.id).filter(User.fb_id == fb_id).one()
     except NoResultFound:
@@ -20,7 +23,8 @@ def get_user_id_from_database(data):
             email=email,
             fb_id=fb_id,
             img_url=img_url,
-            date_created=kstime(0)
+            timezone_offset=timezone_offset,
+            date_created=datetime.utcnow()
         )
 
         db.session.add(user)

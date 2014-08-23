@@ -8,22 +8,27 @@ from apps.models import *
 
 from apps.forms import QuestForm
 from utils import get_user_id
+from datetime import datetime, timedelta
 
 
 @app.route('/quest/create', methods=['GET', 'POST'])
+@app.route('/quest/create/', methods=['GET', 'POST'])
 def create_quest():
     form = QuestForm(group_id=4)
     if request.method == 'GET':
-        return render_template('quest/create.html', form=form)
+        members = db.session.query(User).join(Groupmember).filter(Groupmember.group_id == 4)
+
+        return render_template('quest/create.html', form=form, members=members)
     elif request.method == 'POST':
         if form.validate_on_submit():
+            now = datetime.utcnow()
             quest = Quest(
-                title = form.title.data,
-                category = form.category.data,
-                description = form.description.data,
-                group_id = form.group_id.data,
-                date_created = kstime(0),
-                date_expired = kstime(int(form.expired_date.data))
+                title=form.title.data,
+                category=form.category.data,
+                description=form.description.data,
+                group_id=form.group_id.data,
+                date_created=now,
+                date_expired=now + timedelta(0, int(form.expired_date.data))
             )
 
             db.session.add(quest)
@@ -31,11 +36,14 @@ def create_quest():
 
             return redirect(url_for('list'))
         else:
-            return render_template('quest/create.html', form=form)
+            members = db.session.query(User).join(Groupmember).filter(Groupmember.group_id == 4)
+
+            return render_template('quest/create.html', form=form, members=members)
+
 
 @app.route('/quest/detail/<int:quest_id>', methods=['GET'])
 def detail_quest(quest_id):
-    quest = Quest.query.all(quest_id)
+    quest = Quest.query.get(quest_id)
 
     users = db.session.query(User).join(Groupmember).filter(Groupmember.group_id == quest.group_id).all()
 

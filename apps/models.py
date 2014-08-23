@@ -12,6 +12,7 @@ class User(db.Model):
     fb_id = db.Column(db.String(255), unique=True)
     img_url = db.Column(db.Text())
     date_created = db.Column(db.DateTime())
+    timezone_offset = db.Column(db.Integer)
 
 
 class Group(db.Model):
@@ -48,3 +49,10 @@ class Questmember(db.Model):
     user = db.relationship('User', backref=db.backref('questmember', cascade='all, delete-orphan', lazy='dynamic'))
 
 
+class Review(db.Model):
+    quest_id = db.Column(db.Integer, db.ForeignKey('quest.id'), primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
+    reviewer_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
+    point = db.Column(db.Integer)
+    note = db.Column(db.String(255))
+    date_created = db.Column(db.DateTime())
