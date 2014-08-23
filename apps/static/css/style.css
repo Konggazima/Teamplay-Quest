@@ -167,8 +167,15 @@ nav, .navbar, .navbar-default {
     background-size: 200px;
 }
 
+#create img {
+    max-width: 400px;
+    min-width: 50px;
+}
+
 .creategroup-bg {
     padding-top: 70px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .group-item {

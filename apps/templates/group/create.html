@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block contents %}
+<div id="create">
     <div id="whiteboard"></div>
 
     <div id="add-friends-popup">
@@ -35,13 +36,15 @@
 
             <img src="/static/images/creategroup_line.png" class="creategroup-bg" />
             <a href="#" id="add-friends" class="btn btn-primary">
-                <img src="/static/images/creategroup_invite.png" class="creategroup-bg" />
-                멤버초대
+                <img src="/static/images/creategroup_invite.png" class="creategroup-bg" width="50px" height="50px" />
             </a>
-
+            <br />멤버초대
+            <br />
             <button type="submit" class="btn btn-info">그룹 만들기</button>
         </form>
     </div>
+</div>
+
     <script src="{{ url_for('static', filename='js/group_create.js') }}"></script>
 
 {% endblock %}
