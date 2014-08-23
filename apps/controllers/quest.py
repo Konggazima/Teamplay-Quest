@@ -55,5 +55,7 @@ def detail_quest(quest_id):
     quest = Quest.query.get(quest_id)
 
     users = db.session.query(User).join(Questmember).filter(Questmember.quest_id == quest.id)
+    d = quest.date_expired - timedelta(minutes = get_tz_offset())
+    date_expired = '%d/%d/%d %d:%d'%(d.year, d.month, d.day, d.hour, d.minute)
 
-    return render_template('quest/detail.html', quest=quest, users=users)
+    return render_template('quest/detail.html', quest=quest, users=users, date_expired = date_expired)
