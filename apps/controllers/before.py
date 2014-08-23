@@ -17,9 +17,17 @@ def before_request():
             'img_url' : ''
         }
         session.update(data)
-    g.user_name = None
+    g.user_id = None
 
     if 'user_id' in session:
         g.user_id = session['user_id']
-    else:
-        redirect(url_for('index'))
+    else :
+        if request.endpoint == 'index' or request.endpoint == 'login':
+            pass
+        else:
+            return redirect(url_for('index'))
+
+    # if 'user_id' in session:
+    #     g.user_id =
+    #
+    # if g.user_id == None :
