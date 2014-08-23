@@ -11,6 +11,8 @@ from apps.models import *
 
 @app.route('/', methods=['GET'])
 def index():
+    # if g.user_id != None:
+    #     return redirect(url_for('list'))
     return render_template('index.html')
 
 

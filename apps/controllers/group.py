@@ -21,7 +21,9 @@ def group(group_id = 0):
 def create_group():
     form = GroupForm()
     if request.method == 'GET':
-        return render_template('group/create.html', form=form)
+        users = User.query.filter(User.id != g.user_id)
+
+        return render_template('group/create.html', form=form, users=users)
     elif request.method == 'POST':
         if form.validate_on_submit():
             group = Group(
