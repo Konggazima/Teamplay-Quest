@@ -37,12 +37,6 @@ class QuestForm(Form):
 
     group_id = HiddenField()
 
-    expired_date = DecimalField(
-        u'기한',
-        validators=[NumberRange(1, 120)],
-        description={'placeholder': u'1에서 120사이의 시간를 입력해주세요.'}
-    )
-
 # class JoinForm(Form):
 #     email = EmailField(
 #         u'이메일',
