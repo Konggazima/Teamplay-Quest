@@ -21,6 +21,7 @@ body {
     min-width: 480px;
     height: auto;
     text-align: center;
+    background-color: inherit;
 }
 
 #whiteboard {
@@ -126,9 +127,9 @@ body {
 }
 
 .circle-icon {
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
     background-color: #888;
 }
 
