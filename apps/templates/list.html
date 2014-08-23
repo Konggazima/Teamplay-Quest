@@ -21,7 +21,7 @@
                 <hr />
                 {{ quest.title }}
             </p>
-            <img class="detail-arrow" src="/static/images/list_icon_arrow.png" width="20px" />
+            <a href="{{ url_for('detail_quest', quest_id = quest.id) }}"><img class="detail-arrow" src="/static/images/list_icon_arrow.png" width="20px" /></a>
             <p class="desc"> {{ quest.description }}<br /> </p>
 
         </div>
