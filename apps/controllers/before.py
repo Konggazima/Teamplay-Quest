@@ -23,7 +23,7 @@ def before_request():
 
     if get_user_id():
         if request.endpoint in ('index', 'login'):
-            return redirect(url_for('list'))
+            return redirect(url_for('group'))
     else :
         if request.endpoint in ('index', 'login'):
             pass

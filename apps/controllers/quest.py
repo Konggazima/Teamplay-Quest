@@ -11,6 +11,14 @@ from utils import get_user_id
 from datetime import datetime, timedelta
 
 
+@app.route('/quest', methods=['GET'])
+@app.route('/quest/', methods=['GET'])
+def quest():
+    quests = Quest.query.all()
+
+    return render_template('quest/list.html', quests=quests)
+
+
 @app.route('/quest/create', methods=['GET', 'POST'])
 @app.route('/quest/create/', methods=['GET', 'POST'])
 def create_quest():
