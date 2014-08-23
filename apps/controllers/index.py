@@ -12,8 +12,6 @@ from utils import get_user_id, get_user_id_from_database
 
 @app.route('/', methods=['GET'])
 def index():
-    if not get_user_id():
-        return redirect(url_for('list'))
     return render_template('index.html')
 
 
