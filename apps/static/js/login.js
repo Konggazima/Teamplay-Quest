@@ -1,5 +1,3 @@
-
-
 function fblogin() {
     FB.api('/me', function (response) {
         var name = response.name;
@@ -9,6 +7,7 @@ function fblogin() {
         FB.api('/me/picture?width=100&height=100', function (response) {
             var img_url = response.data.url;
             $.ajax({
+
                 url: "/login",
                 data: {
                     name: name,
@@ -19,12 +18,14 @@ function fblogin() {
                 },
                 dataType: 'JSON',
                 success: function (data) {
-                    location.href = '/list';
+                    location.href = '/group';
                 }
             });
         });
     });
 }
+
+
 
 
 $(document).ready(function () {
