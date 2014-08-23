@@ -25,7 +25,7 @@ def get_user_id_from_database(data):
 
         db.session.add(user)
         db.session.commit()
-        user_id = db.session.query(User.id).filter(User.fb_id==fb_id).one()
+        user_id = user.id
 
     session.permanent = True
     session['user_id'] = user_id
