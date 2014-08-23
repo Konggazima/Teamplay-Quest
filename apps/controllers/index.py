@@ -7,17 +7,17 @@ from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.exc import IntegrityError
 
 from apps.models import *
-from utils import get_user_id
+from utils import get_user_id, get_user_id_from_database
 
 
 @app.route('/', methods=['GET'])
 def index():
-    if g.user_id != None:
+    if not get_user_id():
         return redirect(url_for('list'))
     return render_template('index.html')
 
 
 @app.route('/login', methods=['GET'])
 def login():
-    user_id = get_user_id(request.args)
+    user_id = get_user_id_from_database(request.args)
     return jsonify(id=None)

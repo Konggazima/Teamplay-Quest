@@ -7,6 +7,7 @@ from apps.kstime import kstime
 from apps.models import *
 
 from apps.forms import QuestForm
+from utils import get_user_id
 
 
 @app.route('/quest/create', methods=['GET', 'POST'])

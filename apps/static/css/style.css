@@ -17,48 +17,20 @@ body {
 
 #list,
 #detail {
+    background-color: #e5deda;
     margin: 0 auto;
     min-width: 480px;
     height: auto;
     text-align: center;
-    background-color: inherit;
-}
-
-#whiteboard {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    opacity: 0.5;
-    z-index: -1;
-}
-
-#add-friends {
-    width: 100px;
-    height: 100px;
-    top: 50%;
-    left: 50%;
-    margin-left: -50px;
-    margin-top: -50px;
-    text-align: center;
-}
-
-#add-friends-popup {
-    display: none;
-    position: absolute;
-    border-radius: 5px;
-    padding-top: 40px;
-    z-index: -1;
 }
 
 .quest-detail,
 .quest-review,
 .quest-box {
-    padding: 0px 10px;
-    padding-bottom: 15px;
     width: 100%;
-    background-color: #fff;
+    background-color: #958e8a;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .quest-body img {
@@ -66,7 +38,8 @@ body {
 }
 
 .quest-detail,
-.quest-body {
+.quest-body,
+.quest-foot {
     font-size: 24px;
 }
 
@@ -93,6 +66,10 @@ body {
     float: none;
 }
 
+.quest-foot {
+    padding: 50px;
+}
+
 .quest-review-comment {
     width: 100%;
     display: block;
@@ -116,6 +93,13 @@ body {
     border-radius: 0px 0px 5px 5px;
 }
 
+.btn-gray {
+    width: 90%;
+    margin: 5px;
+    border-radius: 5px !important;
+    background-color: #efefef;
+}
+
 .logo-brand {
     margin: 0 auto;
     text-align: center;
@@ -130,7 +114,7 @@ body {
     width: 20px;
     height: 20px;
     border-radius: 10px;
-    background-color: #888;
+    background-color: #ccc;
 }
 
 .circle {
@@ -150,18 +134,18 @@ body {
 }
 
 .circle-outer-down-right {
-    left: 0%;
+    left: 100%;
     top: 100%;
 }
 
 .circle-outer-down-left {
-    left: 100%;
+    left: 0%;
     top: 100%;
 }
 
 .circle-up-right {
     margin-top: 10px;
-    margin-left: -20px;
+    margin-left: -30px;
 }
 
 .circle-up-left {
@@ -170,13 +154,13 @@ body {
 }
 
 .circle-down-right {
-    margin-top: -20px;
-    margin-left: 10px;
+    margin-top: -30px;
+    margin-left: -30px;
 }
 
 .circle-down-left {
-    margin-top: -20px;
-    margin-left: -20px;
+    margin-top: -30px;
+    margin-left: 10px;
 }
 
 .color-1{

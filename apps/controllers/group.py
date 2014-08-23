@@ -7,6 +7,7 @@ from apps.kstime import kstime
 from apps.models import *
 
 from apps.forms import GroupForm
+from utils import get_user_id
 
 @app.route('/group', methods=['GET', 'POST'])
 @app.route('/group/', methods=['GET', 'POST'])
@@ -22,15 +23,16 @@ def group():
 @app.route('/group/create', methods=['GET', 'POST'])
 def create_group():
     form = GroupForm()
+    user_id = get_user_id()
     if request.method == 'GET':
-        users = User.query.filter(User.id != g.user_id)
+        users = User.query.filter(User.id != user_id)
 
         return render_template('group/create.html', form=form, users=users)
     elif request.method == 'POST':
         if form.validate_on_submit():
             group = Group(
                 name = form.name.data,
-                owner_id = g.user_id,
+                owner_id = user_id,
                 date_created = kstime(0)
             )
 
