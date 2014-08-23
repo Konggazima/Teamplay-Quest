@@ -65,6 +65,11 @@ body {
     border-radius: 0px 0px 5px 5px;
 }
 
+.logo-brand {
+    margin: 0 auto;
+    text-align: center;
+}
+
 .color-1{
     color: #3efe8d;
 }
