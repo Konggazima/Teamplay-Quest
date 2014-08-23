@@ -19,6 +19,10 @@ handlers:
 - url: .*
   script: apps.app
 
+- url: /remoteapi.*
+  script: google.appengine.ext.remote_api.handler.application
+  login: admin
+
 ### libraries: import third-party libraries in python 2.7 ###
 libraries:
 - name: jinja2
