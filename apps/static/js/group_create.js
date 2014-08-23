@@ -33,13 +33,13 @@ $(document).ready(function () {
 });
 
 function openAddFriendsPopup() {
-	$(document).css({z-index, -1});
+	$(document).css({"z-index": -1});
 	$("#add-friends-popup").css({"display": "block", "z-index": 1});
 	$("#whiteboard").css({"display": "block", "z-index": 0});
 }
 
 function closeAddFriendsPopup() {
-	$(document).css({z-index, 0});
+	$(document).css({"z-index": 0});
 	$("#add-friends-popup").css({"display": "none", "z-index": -1});
 	$("#whiteboard").css({"display": "none", "z-index": -1});	
 }

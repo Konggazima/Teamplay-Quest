@@ -23,6 +23,7 @@
         </div>
     </div>
 
+    <img src="/static/images/creategroup_img.png" class="creategroup-bg" />
     <div>
         <form role="form" method="post">
             {{ form.hidden_tag() }}
@@ -32,7 +33,11 @@
                 {{ render_field(field, class="form-control", placeholder=field.description['placeholder']) }}
             {% endfor %}
 
-            <a href="#" id="add-friends" class="btn btn-primary">친구추가</a>
+            <img src="/static/images/creategroup_line.png" class="creategroup-bg" />
+            <a href="#" id="add-friends" class="btn btn-primary">
+                <img src="/static/images/creategroup_invite.png" class="creategroup-bg" />
+                멤버초대
+            </a>
 
             <button type="submit" class="btn btn-info">그룹 만들기</button>
         </form>

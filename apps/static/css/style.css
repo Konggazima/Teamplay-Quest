@@ -167,6 +167,10 @@ nav, .navbar, .navbar-default {
     background-size: 200px;
 }
 
+.creategroup-bg {
+    padding-top: 70px;
+}
+
 .group-item {
     text-align: center;
     margin: 0 auto;
