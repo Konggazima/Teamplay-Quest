@@ -14,29 +14,66 @@ body {
     text-align: center;
 }
 
-#list {
+#list,
+#detail {
     margin: 0 auto;
     min-width: 480px;
     height: auto;
     text-align: center;
 }
 
+#whiteboard {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+#add-friends {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    text-align: center;
+}
+
+#add-friends-popup {
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+    padding-top: 40px;
+    z-index: -1;
+}
+
 .quest-box {
     padding-bottom: 15px;
 }
 
+.quest-detail,
 .quest-body,
 .quest-foot {
     width: 100%;
     padding: 0px 10px;
 }
 
+.quest-detail img,
 .quest-body img {
     float: left;
     margin: 0 5px;
     background-color: #eee;
 }
 
+.quest-detail,
+.quest-body {
+    font-size: 24px;
+}
+
+.quest-detail .title,
 .quest-body .title {
     border-radius: 5px 5px 0px 0px;
     margin: 0px;
@@ -44,6 +81,7 @@ body {
     background-color: #aaa;
 }
 
+.quest-detail .desc,
 .quest-body .desc {
     margin: 0px;
     text-align: left;
@@ -51,9 +89,10 @@ body {
     background-color: green;
 }
 
-.quest-body {
-    font-size: 24px;
+.quest-detail .desc {
+    border-radius: 0px 0px 5px 5px;
 }
+
 
 .btn-flat {
     width:100%;

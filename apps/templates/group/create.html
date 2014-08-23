@@ -10,7 +10,33 @@
                 {{ render_field(field, class="form-control", placeholder=field.description['placeholder']) }}
             {% endfor %}
 
+            <button id="add-friends" class="btn btn-primary">친구추가</button>
+
             <button type="submit" class="btn btn-info">그룹 만들기</button>
         </form>
     </div>
+
+    <div id="whiteboard">&nbsp;
+    </div>
+
+    <div id="add-friends-popup">
+        <div class="input-group">
+            <input class="form-control" type="email" placeholder="Enter email">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+        </div>
+        <div class="checkbox" id="friends">
+            <label>
+                <input type="checkbox" value=""> list 1
+            </label>
+            <label>
+                <input type="checkbox" value=""> list 2
+            </label>
+        </div>
+        <div class="input-group">
+            <button id="add-friends-lockin" class="btn"></button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/group_create.js') }}"></script>
+
 {% endblock %}
