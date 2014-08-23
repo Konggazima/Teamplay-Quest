@@ -170,6 +170,7 @@ nav, .navbar, .navbar-default {
 .group-item {
     text-align: center;
     margin: 0 auto;
+    padding-bottom: 50px;
 }
  
 .group-item img {
