@@ -29,7 +29,7 @@ def login():
             email=email,
             fb_id=fb_id,
             img_url=img_url,
-            date_created=kstime(9)
+            date_created=kstime(0)
         )
 
         db.session.add(user)

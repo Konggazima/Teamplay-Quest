@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block contents %}
+    <div>
+        <form role="form" method="post">
+            {{ form.hidden_tag() }}
+
+            {% from "_form_field.html" import render_field %}
+            {% for field in form if field.widget.input_type != 'hidden' %}
+                {{ render_field(field, class="form-control", placeholder=field.description['placeholder']) }}
+            {% endfor %}
+
+            <button type="submit" class="btn btn-info">그룹 만들기</button>
+        </form>
+    </div>
+{% endblock %}

@@ -3,11 +3,7 @@
 {% block layout %}
     <nav class="navbar navbar-default">
         <div class="logo-brand">
-            {% if brand is image(in login/group select) %}
-                <img src="/static/images/logo.png" />
-            {% elif brand is text(in group page) %}
-                <h1> {{ group_name }} </h1>
-            {% endif %}
+
         </div>
     </nav>
     <div class="container">

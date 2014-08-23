@@ -26,7 +26,7 @@ class Group(db.Model):
 class Quest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255))
-    category = db.Column(db.Integer)
+    category = db.Column(db.String(255))
     description = db.Column(db.Text())
     group_id = db.Column(db.Integer, db.ForeignKey('group.id'))
     group = db.relationship('Group', backref=db.backref('quest', cascade='all, delete-orphan', lazy='dynamic'))
