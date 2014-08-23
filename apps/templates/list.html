@@ -3,8 +3,14 @@
 {% block contents %}
 <div id="list">
     <div class="quest-box">
+        <div class="circle-outer circle-outer-up-right">
+           <span class="circle-icon circle circle-up-right" ></span>
+        </div>
+        <div class="circle-outer circle-outer-up-left">
+           <span class="circle-icon circle circle-up-left" ></span>
+        </div>
         <div class="quest-body">
-            <img src="" width="100px" height="100px" />
+            <img src="/static/images/list_place.png" width="100px" height="100px" />
             <p class="title"> Title </p>
             <p class="desc"> Description
             <br />  Chicken!Chicken! Chicken!
@@ -13,10 +19,21 @@
             <br />  Chicken!Chicken! Chicken!
             </p>
         </div>
+        <div class="quest-score">
+            <span><img src="" width="50px" height="50px"/></span>
+            <span><img src="" width="50px" height="50px"/></span>
+            <span><img src="" width="50px" height="50px"/></span>
+            <span><img src="" width="50px" height="50px"/></span>
+        </div>
         <div class="quest-foot">
-            <button class="btn btn-success btn-bath">수행완료</button>
+            <button class="btn btn-bath">수행완료</button>
+        </div>
+        <div class="circle-outer circle-outer-down-right">
+           <span class="circle-icon circle circle-down-right" ></span>
+        </div>
+        <div class="circle-outer circle-outer-down-left">
+           <span class="circle-icon circle circle-down-left" ></span>
         </div>
     </div>
 </div>
-
 {% endblock %}

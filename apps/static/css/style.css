@@ -1,4 +1,5 @@
 body {
+    background-color:  #e5dead;
     margin: 0;
     padding: 0;
 }
@@ -50,22 +51,17 @@ body {
     z-index: -1;
 }
 
-.quest-box {
-    padding-bottom: 15px;
-}
-
 .quest-detail,
-.quest-body,
-.quest-foot {
-    width: 100%;
+.quest-review,
+.quest-box {
     padding: 0px 10px;
+    padding-bottom: 15px;
+    width: 100%;
+    background-color: #fff;
 }
 
-.quest-detail img,
 .quest-body img {
     float: left;
-    margin: 0 5px;
-    background-color: #eee;
 }
 
 .quest-detail,
@@ -78,7 +74,6 @@ body {
     border-radius: 5px 5px 0px 0px;
     margin: 0px;
     font-weight: bold;
-    background-color: #aaa;
 }
 
 .quest-detail .desc,
@@ -86,13 +81,29 @@ body {
     margin: 0px;
     text-align: left;
     padding-left: 5px;
-    background-color: green;
 }
 
-.quest-detail .desc {
+.quest-detail .quest-add-comment {
     border-radius: 0px 0px 5px 5px;
 }
 
+.quest-score {
+    text-align: left;
+    float: none;
+}
+
+.quest-review-comment {
+    width: 100%;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.quest-add-comment {
+    padding-top: 10px;
+}
 
 .btn-flat {
     width:100%;
@@ -107,6 +118,64 @@ body {
 .logo-brand {
     margin: 0 auto;
     text-align: center;
+}
+
+.circle-outer {
+    position: relative;
+    text-align: left;
+}
+
+.circle-icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #888;
+}
+
+.circle {
+    text-align: left;
+    padding: 0;
+    position: absolute;
+}
+
+.circle-outer-up-right {
+    left: 100%;
+    top: 0%;
+}
+
+.circle-outer-up-left {
+    left: 0%;
+    top: 0%;
+}
+
+.circle-outer-down-right {
+    left: 0%;
+    top: 100%;
+}
+
+.circle-outer-down-left {
+    left: 100%;
+    top: 100%;
+}
+
+.circle-up-right {
+    margin-top: 10px;
+    margin-left: -20px;
+}
+
+.circle-up-left {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.circle-down-right {
+    margin-top: -20px;
+    margin-left: 10px;
+}
+
+.circle-down-left {
+    margin-top: -20px;
+    margin-left: -20px;
 }
 
 .color-1{
