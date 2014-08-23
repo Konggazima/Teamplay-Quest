@@ -38,3 +38,11 @@ def get_user_id_from_database(data):
 def get_user_id():
     return session.get('user_id')
 
+def get_tz_offset():
+    user_id = get_user_id()
+    try:
+        offset = db.session.query(User.timezone_offset).filter(
+            User.id == user_id).one()
+    except NoResultFound:
+        offset = -540
+    return offset
