@@ -16,7 +16,7 @@ $(document).ready(function () {
                 dom = $(this).next().clone();
                 $(dom).css({"display": "inline", "margin": "20px"});
                 $(dom).addClass("picked");
-                $("#add-friends").before( dom );
+                $("#add-friends").after( dom );
             }
         });
         closeAddFriendsPopup();

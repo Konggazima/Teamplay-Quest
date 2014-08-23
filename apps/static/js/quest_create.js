@@ -16,7 +16,7 @@ $(document).ready(function () {
                 dom = $(this).next().clone();
                 $(dom).css({"display": "inline", "margin": "20px"});
                 $(dom).addClass("picked");
-                $("#add-friends").before( dom );
+                $("#add-friends").after( dom );
             }
         });
         closeAddFriendsPopup();
@@ -37,7 +37,7 @@ $(document).ready(function () {
             this.setAttribute("data-checked", !checked + "");
         });
     });
-    
+
     $(function(){
         $('*[name=date_expired]').datetimepicker({
             step:30,
@@ -46,6 +46,12 @@ $(document).ready(function () {
             maxDate:'+1970/03/1',
             inline:true
         });
+    });
+
+    $("#datetimepicker").css({"display": "none"});
+
+    $("#place").click( function() {
+        $("#datetimepicker").css({"display": "block"});
     });
 });
 
