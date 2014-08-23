@@ -14,7 +14,8 @@ function fblogin() {
                     name: name,
                     fb_id: fb_id,
                     email: email,
-                    img_url : img_url
+                    img_url : img_url,
+                    timezone_offset : new Date().getTimezoneOffset()
                 },
                 dataType: 'JSON',
                 success: function (data) {

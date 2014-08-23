@@ -16,6 +16,7 @@ def before_request():
             'fb_id' : '00000000000',
             'email' : 'someone@some.one',
             'img_url' : ''
+            'timezone_offset': '-540'
         }
         user_id = get_user_id_from_database(data)
         session.update(data)

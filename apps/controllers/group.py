@@ -8,6 +8,7 @@ from apps.models import *
 
 from apps.forms import GroupForm
 from utils import get_user_id
+from datetime import datetime
 
 @app.route('/group', methods=['GET', 'POST'])
 @app.route('/group/', methods=['GET', 'POST'])
@@ -33,7 +34,7 @@ def create_group():
             group = Group(
                 name = form.name.data,
                 owner_id = user_id,
-                date_created = kstime(0)
+                date_created = datetime.utcnow()
             )
 
             db.session.add(group)

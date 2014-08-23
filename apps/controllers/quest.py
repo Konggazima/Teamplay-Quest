@@ -8,7 +8,7 @@ from apps.models import *
 
 from apps.forms import QuestForm
 from utils import get_user_id
-
+from datetime import datetime, timedelta
 
 @app.route('/quest/create', methods=['GET', 'POST'])
 @app.route('/quest/create/', methods=['GET', 'POST'])
@@ -18,13 +18,14 @@ def create_quest():
         return render_template('quest/create.html', form=form)
     elif request.method == 'POST':
         if form.validate_on_submit():
+            now = datetime.utcnow()
             quest = Quest(
                 title = form.title.data,
                 category = form.category.data,
                 description = form.description.data,
                 group_id = form.group_id.data,
-                date_created = kstime(0),
-                date_expired = kstime(int(form.expired_date.data))
+                date_created = now,
+                date_expired = now + timedelta(0, int(form.expired_date.data))
             )
 
             db.session.add(quest)
