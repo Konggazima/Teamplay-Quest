@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block contents %}
+    <div id="login">
+    <h1 class="color-2">Hello Teamplay Quest!</h1>
+
+    <h3 class="color-1">We need your Name.</h3>
+
+    <button type="submit" id="facebook-btn" class="btn btn-primary" style="margin-top: 15px;">Login with Facebook
+    </button>
+</div>
+
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+{% endblock %}
+
