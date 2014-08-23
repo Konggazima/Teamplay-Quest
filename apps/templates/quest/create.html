@@ -2,6 +2,28 @@
 
 {% block contents %}
     <div>
+        <div id="whiteboard"></div>
+
+        <div id="add-friends-popup">
+            <div class="input-group">
+                <input class="form-control input-lg" type="text" placeholder="친구찾기">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+            </div>
+            <div id="friends">
+        {% if users %}
+            {% for user in users%}
+                <div class="input-group input-lg">
+                    <input type="button" class="btn btn-circle input-lg no" data-checked="false" />
+                    <img src="{{ user.img_url }}" height="40px" class=""/> {{ user.name }}
+                </div>
+            {% endfor %}
+        {% endif %}
+            </div>
+            <div class="input-group">
+                <button id="add-friends-lockin" class="btn">확인</button>
+            </div>
+        </div>
+
         <form role="form" method="post">
             {{ form.hidden_tag() }}
 
@@ -10,28 +32,17 @@
                 {{ render_field(field, class="form-control", placeholder=field.description['placeholder']) }}
             {% endfor %}
             <input type="text" id="date_expired" name="date_expired"/>
-            <script type="text/javascript">
-                $(function(){
-                    $('*[name=date_expired]').datetimepicker({
-    step:30,
-    format:'Y/m/d/H/i',
-    minDate:'-1970/01/1',
-    maxDate:'+1970/03/1',
-    inline:true
-});
-                });
-            </script>
 
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button class="btn btn-gray" type="button" id="place">장소</button>
+                </span>
+            </div>
+
+            <br />
             <button type="submit" class="btn btn-info">퀘스트 만들기</button>
         </form>
-
-        {% if members %}
-            {% for member in members  %}
-                {{ member.id }}<br>
-                {{ member.name }}<br>
-                {{ member.img_url }}<br><br>
-            {% endfor %}
-
-        {% endif %}
     </div>
+
+    <script src="{{ url_for('static', filename='js/quest_create.js') }}"></script>
 {% endblock %}

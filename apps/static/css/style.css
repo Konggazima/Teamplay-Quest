@@ -34,7 +34,7 @@ nav, .navbar, .navbar-default {
 
 #whiteboard {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -158,6 +158,11 @@ nav, .navbar, .navbar-default {
   font-size: 12px;
   line-height: 1.42;
   border-radius: 15px;
+}
+
+.input-group img {
+    display: inline;
+    margin: 0 10px;
 }
 
 .grouplist-bg {

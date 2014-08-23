@@ -37,6 +37,22 @@ $(document).ready(function () {
             this.setAttribute("data-checked", !checked + "");
         });
     });
+
+    $(function(){
+        $('*[name=date_expired]').datetimepicker({
+            step:30,
+            format:'Y/m/d/H/i',
+            minDate:'-1970/01/1',
+            maxDate:'+1970/03/1',
+            inline:true
+        });
+    });
+
+    $("#datetimepicker").css({"display": "none"});
+
+    $("#place").click( function() {
+        $("#datetimepicker").css({"display": "block"});
+    });
 });
 
 function openAddFriendsPopup() {

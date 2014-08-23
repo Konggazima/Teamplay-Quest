@@ -20,15 +20,33 @@
                 <hr />
                 {{ quest.title }}
             </p>
+            <a href="javascript:history.back()"><img class="detail-arrow" src="/static/images/detail_icon_arrow.png" width="20px" /></a>
             <p class="desc"> {{ quest.description }}<br /> </p>
             <input type="hidden" value="{{ quest.id }}" name="quest_id"/>
 
         </div>
         <div class="quest-foot">
             <div class="input-group">
+                <input type="text" id="date_expired" name="date_expired"/>
+                  <script type="text/javascript">
+                $(function(){
+		    $('*[name=date_expired]').datetimepicker({
+                        value:'{{date_expired}}',
+                        inline:true,
+                        todayButton:false,
+                        scrollMonth:false,
+                        scrollTime:false,
+                        scrollInput:false,
+                        timepickerScrollbar:false
+		    });
+		});
+                  </script>
+
+		<!--
                 <span class="input-group-btn">
                     <button class="btn btn-gray" type="button">시간</button>
                 </span>
+		-->
             </div>
             <div class="input-group">
                 <span class="input-group-btn">
@@ -62,6 +80,5 @@
 
     </div>
 </div>
-
     <script src="{{ url_for('static', filename='js/quest_detail.js') }}"></script>
 {% endblock %}
